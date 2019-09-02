@@ -1,6 +1,5 @@
 <template>
     <div>
-        <link-nav></link-nav>
         <p>routerall</p> 
     </div>
 </template>

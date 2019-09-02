@@ -5,6 +5,9 @@
         <router-link to="/tushu">图书</router-link>
         <router-link to="/guangbo">广播</router-link>
         <router-link to="/xiaozu">小组</router-link>
+        <router-link to="/routerall">
+            <img src="../../static/img/sousuo.png">
+        </router-link>
 
     </div>
 </template>
@@ -32,7 +35,7 @@ export default {
         color: #05b512;
         font-weight: 600;
         line-height: .6rem;
-        margin-right: 20%;
+        margin-right: 15%;
     }
     .header>a:nth-child(2){
         font-size: .16rem;
@@ -57,5 +60,10 @@ export default {
         color: #2ab8cc;
         line-height: .6rem;
         margin-right: .15rem;
+    }
+    img{
+        width: .25rem;
+        height: .25rem;
+        margin-top:.2rem;
     }
 </style>

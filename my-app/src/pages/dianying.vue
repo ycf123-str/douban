@@ -1,21 +1,25 @@
 <template>
     <div>
         <link-nav></link-nav>
-        <p>电影</p> 
+        <div class="geli">
+            <move-ban></move-ban>
+        </div> 
     </div>
 </template>
 
 <script>
 import linkNav from '../components/linknav'
+import moveBan from '../components/moveban'
 export default {
     components:{
-        linkNav
+        linkNav,
+        moveBan
     }
 }
 </script>
 
 <style scoped>
-    p{
+    .geli{
         margin-top: .6rem;
     }
 </style>

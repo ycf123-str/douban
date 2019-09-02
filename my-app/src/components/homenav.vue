@@ -1,7 +1,7 @@
 <template>
     <div class="header">
-        <router-link to="/reg">影院热映</router-link>
-        <router-link to="/login">欧美新碟榜</router-link>
+        <router-link to="/dianying">影院热映</router-link>
+        <router-link to="/guangbo">欧美新碟榜</router-link>
         <router-link to="/reg">注册账号</router-link>
         <router-link to="/login">登录豆瓣</router-link>
     </div>
@@ -16,7 +16,7 @@ export default {
 <style scoped>
     .header{
         width: 86%;
-        margin:0rem 7%;
+        margin:0.8rem 7% 0;
         font-size: 0;
     }
     .header>a{

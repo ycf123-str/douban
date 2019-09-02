@@ -3,16 +3,19 @@
         <link-nav></link-nav>
         <p>{{text}}</p>
         <home-nav></home-nav>
+        <home-list></home-list>
     </div>
 </template>
 
 <script>
 import linkNav from '../components/linknav'
 import homeNav from '../components/homenav'
+import homeList from '../components/homelist'
 export default {
     components:{
         linkNav,
-        homeNav
+        homeNav,
+        homeList
     },
     data(){
         return{
