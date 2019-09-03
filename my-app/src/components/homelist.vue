@@ -1,9 +1,9 @@
 <template>
     <div>
-        <div class="list" v-for="(v,i) in arrs" :key="i">
+        <div class="list" v-for="(v,i) in arrs" :key="i" @click="fun(i)">
             <div class="left">
                 <h1>{{arrs[i].title}}</h1>
-                <p>{{newarr[i]}}</p>
+                <p v-html="newarr[i]"></p>
                 <span>{{arrs[i].category_name}}</span>
             </div>
             <div class="right">
@@ -26,15 +26,26 @@ export default {
             for(var i=0;i<arr.length;i++){
                 this.newarr.push(arr[i].content.substring(0,30));
             }
-            // console.log(this.newarr);
+            // console.log(arr);
         })  
     },
     data(){
         return{
             newarr:[],
-            arrs:[]
+            arrs:[],
+            paoarr:[]
         }
-    }
+    },
+    methods:{
+        fun(val){
+            this.paoarr=this.arrs.filter((v,i,that)=>{
+            if(i == val){
+                return that[i];
+            }
+            })
+            this.$router.push({name:'homexq',params:{arr:this.paoarr}});
+        }
+    },
 }
 </script>
 <style scoped>

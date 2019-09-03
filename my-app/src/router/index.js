@@ -8,6 +8,7 @@ import xiaoZu from '../pages/xiaozu'
 import routerAll from '../pages/routerall'
 import login from '../pages/login'
 import reg from '../pages/reg'
+import homexq from '../pages/homexq'
 
 Vue.use(Router)
 
@@ -52,6 +53,10 @@ export default new Router({
       path:"/reg",
       name:"reg",
       component:reg
+    },{
+      path:"/homexq/:arr",
+      name:"homexq",
+      component:homexq
     },
     {
       path:"/*",

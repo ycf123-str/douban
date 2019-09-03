@@ -1,51 +1,40 @@
 <template>
 <div>
-    <div class="head">
-        <div class="tit">
-            <span>影院热映</span>
-            <a href="#">更多</a>
-        </div>
-        <div style="display:flex;overflow:auto">
-            <div class="ban" v-for="(v,i) in arra" :key="i">
-                <img :src="v.images.medium">
-                <p>{{v.title}}</p>
-            </div>
-        </div>
-    </div>
-    <div class="head">
-        <div class="tit">
-            <span>免费在线观影</span>
-            <a href="#">更多</a>
-        </div>
-        <div style="display:flex;overflow:auto">
-            <div class="ban" v-for="(v,i) in arrb" :key="i">
-                <img :src="v.images.medium">
-                <p>{{v.title}}</p>
-            </div>
-        </div>
-    </div>
+    <zi-move title="影院热映" :ziarr="arra"></zi-move>
+    <zi-move title="免费在线观影" :ziarr="arrb"></zi-move>
+    <zi-move title="新片速递" :ziarr="arrc"></zi-move>
 </div>
 </template>
 <script>
+import ziMove from './zimoveban'
 export default {
-    created() {
+    components:{
+        ziMove
+    },
+    created(){
         this.axios({
             method:"get",
             url:"/movie"
         }).then((data)=>{
-            // console.log(data.data.movie);
+            console.log(data.data.movie);
             var arrs = data.data.movie;
             arrs.filter((v,i)=>{
                 if(i<11){
                     this.arra.push(arrs[i]);
-                    return;
                 }
+                return;
             })
             arrs.filter((v,i)=>{
                 if(i>10 && i<21){
                     this.arrb.push(arrs[i]);
-                    return;
                 }
+                return;
+            })
+            arrs.filter((v,i)=>{
+                if(i>20 && i<31){
+                    this.arrc.push(arrs[i]);
+                }
+                return;
             })
         })   
     },
@@ -59,7 +48,7 @@ export default {
 }
 </script>
 <style scoped>
-    .head{
+    /* .head{
         margin: 5%;
     }
     .tit{
@@ -89,5 +78,5 @@ export default {
         font-size: .16rem;
         color: #111111;
         text-align: center;
-    }
+    } */
 </style>
