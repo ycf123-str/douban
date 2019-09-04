@@ -28,7 +28,7 @@ export default {
     .head>a:nth-child(1){
         font-size: .14rem;
         color: #2ca532;
-        margin: 0 .5rem ;
+        margin: 0 .4rem ;
     }
     .head>a:nth-child(2){
         font-size: .14rem;

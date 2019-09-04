@@ -5,11 +5,10 @@
             <span>{{title}}</span>
             <a href="#">更多</a>
         </div>
-        <div style="display:flex;overflow:auto;font-size:0">
-            <div v-for="(v,i) in arr" :key="i" class="box">
+        <div class="con">
+            <li v-for="(v,i) in arr" :key="i" class="box" v-if="!v.line">
                 <a :href="v.href" :style="{color:v.color}">{{v.title}}</a>
-                <!-- <div v-if="v.line" style="flex-wrap"></div> -->
-            </div>
+            </li><br v-else/>
         </div>
     </div>
     </div>
@@ -41,6 +40,11 @@ export default {
 </script>
 
 <style scoped>
+.con{
+    white-space: nowrap;
+    overflow:auto;
+    font-size: 0;
+}
     .head{
         margin: 5%;
     }
@@ -61,10 +65,11 @@ export default {
         border:1px solid orange;
         height: .7rem;
         line-height: .7rem;
-        flex-shrink: 0;
         border-radius: 5px;
         padding: 0 .15rem;
         margin: .1rem .1rem;
+        font-size:0;
+        display: inline-block;
     }
     .box>a{
         font-size: .18rem;

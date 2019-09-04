@@ -1,9 +1,9 @@
 <template>
     <div>
         <link-nav></link-nav>
-        <p>{{text}}</p>
-        <home-nav></home-nav>
-        <home-list></home-list>
+            <p>{{text}}</p>
+            <home-nav></home-nav>
+            <home-list></home-list>
     </div>
 </template>
 

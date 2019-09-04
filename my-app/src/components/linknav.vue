@@ -24,7 +24,8 @@ export default {
         height: .6rem;
         position: fixed;
         top: 0;
-        background-color: pink;
+        background-color:#fff;
+        z-index: 100;
         border-bottom: 1px solid #f3f3f3;
         padding: 0 5%;
         font-size: 0;

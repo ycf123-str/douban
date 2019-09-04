@@ -2,7 +2,7 @@
 	{
 		"name":"电影",
 		"des":"影院热映",
-		"url":"/movie",
+		"url":"#/dianying",
 		"color":"rgb(35, 132, 232)"
 	},
 	{
@@ -14,7 +14,7 @@
 	{
 		"name":"图书",
 		"des":"畅销排行",
-		"url":"/books",
+		"url":"#/tushu",
 		"color":"rgb(159, 120, 96)"
 	},
 	{
@@ -26,7 +26,7 @@
 	{
 		"name":"小组",
 		"des":"志趣相同",
-		"url":"/group",
+		"url":"#/xiaozu",
 		"color":"rgb(42, 184, 204)"
 	},
 	{
@@ -56,7 +56,7 @@
 	{
 		"name":"广播",
 		"des":"友邻动态",
-		"url":"/broadcast",
+		"url":"#/guangbo",
 		"color":"rgb(225, 100, 77)"
 	},
 	{
