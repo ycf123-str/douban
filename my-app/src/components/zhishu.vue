@@ -11,21 +11,26 @@
                 <p>改变世界的万物图典，3000幅图里的发明与冒险</p>
             </div>
         </div>
-        <div style="display:flex;overflow:auto">
+        <div style="display:flex;overflow:auto;margin:0 5%;">
             <div class="ban" v-for="(v,i) in ziarr" :key="i">
                 <img :src="v.images.medium">
                 <p>{{v.title}}</p>
+                <wuxing :value="v.rating.average/2"></wuxing>
             </div>
         </div>
     </div>
 </template>
 <script>
+import wuxing from './fiveStarts'
 export default {
     props:{
        ziarr:{
            type:Array,
            required:true
        }
+   },
+   components:{
+       wuxing
    }
 }
 </script>
@@ -48,7 +53,7 @@ export default {
         display: flex;
     }
     .content>img{
-        width: 1.5rem;
+        /* width: 1.5rem; */
         height: 2rem;
     }
     .rig{
@@ -86,5 +91,8 @@ export default {
         font-size: .16rem;
         color: #111111;
         text-align: center;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
 </style>

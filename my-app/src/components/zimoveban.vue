@@ -6,16 +6,21 @@
             <a href="#">更多</a>
         </div>
         <div style="display:flex;overflow:auto">
-            <div class="ban" v-for="(v,i) in ziarr" :key="i">
+            <div class="ban" v-for="(v,i) in ziarr" :key="i" @click="fun(i)">
                 <img :src="v.images.medium">
                 <p>{{v.title}}</p>
+                <wuxing :value="v.rating.average/2" :aaaa="v.rating.average"></wuxing>
             </div>
         </div>
     </div>
 </div>
 </template>
 <script>
+import wuxing from './fiveStarts'
 export default {
+    components:{
+        wuxing
+    },
    props:{
        title:{
            type:String,
@@ -25,7 +30,19 @@ export default {
            type:Array,
            required:true
        }
-   }
+   },
+   methods:{
+       fun(val){
+        //    console.log(val);
+        //    console.log(this.ziarr);
+           var paoarr=this.ziarr.filter((v,i,that)=>{
+                if(i == val){
+                    return that[i];
+                }
+            })
+            this.$router.push({name:'xqmove',query:{arr:paoarr}});
+       }
+   },
 }
 </script>
 <style scoped>
@@ -60,5 +77,8 @@ export default {
         font-size: .16rem;
         color: #111111;
         text-align: center;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
     }
 </style>

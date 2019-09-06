@@ -2,7 +2,7 @@
     <div>
         <link-nav></link-nav>
         <div class="geli">
-            <zi-login title="请先登录"></zi-login>
+            <zi-login></zi-login>
             <xiaozucom texta="更多相关小组" title="租房找舍友" :arr="arra"></xiaozucom>
             <xiaozucom texta="来聊五毛钱" title="来聊五毛钱" :arr="arrb"></xiaozucom>
             <xiaozucom texta="买买买" title="更多相关小组" :arr="arrc"></xiaozucom>
@@ -32,7 +32,7 @@ export default {
             this.arra= data.data.xiaozua;
             this.arrb= data.data.xiaozub;
             this.arrc= data.data.xiaozuc;
-            console.log(this.arra)
+            // console.log(this.arra)
         })
     },
     data(){

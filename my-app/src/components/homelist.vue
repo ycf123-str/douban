@@ -45,9 +45,9 @@ export default {
     methods:{
         fun(val){
             this.paoarr=this.arrs.filter((v,i,that)=>{
-            if(i == val){
-                return that[i];
-            }
+                if(i == val){
+                    return that[i];
+                }
             })
             this.$router.push({name:'homexq',params:{arr:this.paoarr}});
         }

@@ -3,13 +3,20 @@
         <router-link to="/dianying">影院热映</router-link>
         <router-link to="/guangbo">欧美新碟榜</router-link>
         <router-link to="/reg">注册账号</router-link>
-        <router-link to="/login">登录豆瓣</router-link>
+        <a href="#" v-if="bool" @click="fun()">退出登录</a>
+        <router-link to="/login" v-else>登录豆瓣</router-link>
     </div>
 </template>
 
 <script>
 export default {
-    
+    props:["bool"],
+    methods:{
+        fun(){
+            window.localStorage.removeItem("token");
+            this.bool=false;
+        }
+    },
 }
 </script>
 

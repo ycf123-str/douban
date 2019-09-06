@@ -1,17 +1,35 @@
 <template>
     <div class="head">
-        <img class="img" src="../../static/img/meideng.jpg">
-        <span>{{title}}</span>
+        <img v-if="text" class="img" src="../../static/img/avatar.9297a89.png">
+        <img v-else class="img" src="../../static/img/meideng.jpg">
+        <span v-if="text">{{text}}</span>
+        <span v-else>请先登录</span>
         <img src="../../static/img/icon-pen.svg">
         <img src="../../static/img/icon-camera.svg">
     </div>
 </template>
 <script>
 export default {
-    props:{
-        title:{
-            type:String,
-            required:true
+    created(){
+        var localtoken=window.localStorage.getItem("token");
+        if(localtoken){
+            this.axios({
+                method:"get",
+                url:"http://localhost:3000/shouye",
+                params:{
+                    token:localtoken
+                }
+            }).then((ok)=>{
+                // console.log(ok.data.username);
+                if(ok.data.linkid==5){
+                    this.text=ok.data.username;
+                }
+            })
+        }
+    },
+    data(){
+        return{
+            text:""
         }
     }
 }

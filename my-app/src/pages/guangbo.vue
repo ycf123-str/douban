@@ -3,7 +3,7 @@
         <link-nav></link-nav>
         <div class="geli">
             <xiazaiapp tit="打开App,浏览更多"></xiazaiapp>
-            <zi-login title="请先登录"></zi-login>
+            <zi-login></zi-login>
             <zi-guang></zi-guang>
             <a class="cla" href="#">显示更多广播</a>  
             <footers></footers>   

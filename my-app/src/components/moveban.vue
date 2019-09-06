@@ -16,7 +16,7 @@ export default {
             method:"get",
             url:"/movie"
         }).then((data)=>{
-            console.log(data.data.movie);
+            // console.log(data.data.movie);
             var arrs = data.data.movie;
             arrs.filter((v,i)=>{
                 if(i<11){

@@ -9,6 +9,7 @@ import routerAll from '../pages/routerall'
 import login from '../pages/login'
 import reg from '../pages/reg'
 import homexq from '../pages/homexq'
+import xqmove from '../pages/xqmove'
 
 Vue.use(Router)
 
@@ -57,6 +58,11 @@ export default new Router({
       path:"/homexq/:arr",
       name:"homexq",
       component:homexq
+    },
+    {
+      path:"/xqmove",
+      name:"xqmove",
+      component:xqmove
     },
     {
       path:"/*",

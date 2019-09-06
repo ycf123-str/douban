@@ -1,8 +1,8 @@
 <template>
-    <div>
+    <div style="font-size:0">
         <link-nav></link-nav>
-            <p>{{text}}</p>
-            <home-nav></home-nav>
+            <p>{{texta}}</p>
+            <home-nav :bool="text"></home-nav>
             <home-list></home-list>
     </div>
 </template>
@@ -19,7 +19,8 @@ export default {
     },
     data(){
         return{
-            text:""
+            text:"",
+            texta:""
         }
     },
     created(){
@@ -35,17 +36,21 @@ export default {
                 // console.log(ok.data.username);
                 if(ok.data.linkid==5){
                     this.text="欢迎您"+ok.data.username;
+                    this.$message({
+                        message: `欢迎您${ok.data.username}`,
+                        type: 'success'
+                    });
                 }
             })
         }else{
             var i = 4;
-                    var mytimer = setInterval(()=>{
-                        i--;
-                        if(i == 0){
-                            clearInterval(mytimer);
-                            this.$router.push("/login");
-                        }
-                        this.text = "不好意思当前页面仅对会员开放请您登录后访问"+i+"秒后跳转";
+            var mytimer = setInterval(()=>{
+                i--;
+                if(i == 0){
+                    clearInterval(mytimer);
+                    this.$router.push("/login");
+                }
+                this.texta = "不好意思当前页面仅对会员开放请您登录后访问"+i+"秒后跳转";
             },1000)
         }
     }
@@ -54,7 +59,11 @@ export default {
 
 <style scoped>
     p{
-        margin-top: .6rem;
+        width: 100%;
+        position: absolute;
+        top:.6rem;
         font-size: .2rem;
+        text-align: center;
+        color:deeppink;
     }
 </style>

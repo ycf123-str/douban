@@ -6,9 +6,9 @@
             <a href="#">更多</a>
         </div>
         <div class="con">
-            <li v-for="(v,i) in arr" :key="i" class="box" v-if="!v.line">
+            <div v-for="(v,i) in arr" :key="i" class="box" v-if="!v.line">
                 <a :href="v.href" :style="{color:v.color}">{{v.title}}</a>
-            </li><br v-else/>
+            </div><br v-else/>
         </div>
     </div>
     </div>
