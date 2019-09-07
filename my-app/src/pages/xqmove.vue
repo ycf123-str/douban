@@ -31,7 +31,6 @@
             </div>
             <p>{{arr[0].title}}的短评</p>
         </div>
-        
     </div>
 </template>
 
@@ -51,7 +50,8 @@ export default {
     },
     data(){
         return{
-            arr:[]
+            arr:[],
+            ok:true
         }
     }
 }

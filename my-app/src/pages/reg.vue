@@ -35,6 +35,7 @@ export default {
             this.bool=!this.bool;
         },
         fun(){
+            // this.$router.push("/login");
             if(this.emval == "" || this.pasval == "" || this.userval == ""){
                 this.text = "请把信息填写完整";
             }else{

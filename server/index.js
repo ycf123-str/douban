@@ -76,7 +76,7 @@ app.get("/shouye",function(req,res){
     var token = req.query.token;
     var mi = "fas5fas5fa5sfaa33";
     jwt.verify(token,mi,function(err,data){
-        // console.log(data);
+        console.log(data);
         if(data.loginok == true){
             res.send({mes:"用户登陆过",status:200,linkid:5,username:data.uname});
         }else{
